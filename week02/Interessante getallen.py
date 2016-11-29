@@ -3,16 +3,22 @@ Opdracht 7 - Interessante getallen
 https://dodona.ugent.be/nl/exercises/211647828/
 """
 
-def main():
-    # Set variables
-    i = 0
-    j = 0
-    testgevallen = []
+# Variables
+testgevallen = []
 
+def main():
     # User input
     aantalGetallen = float(input("Hoeveel test gevallen wil je gebruiken: "))
 
+    # Array testgevallen aanmaken
+    getAantalTestgevallen(aantalGetallen)
+
+    # Print antwoorden
+    printAntwoorden(aantalGetallen, testgevallen)
+
+def getAantalTestgevallen(aantalGetallen) -> testgevallen:
     # Create array
+    i = 0
     while i < aantalGetallen:
         # User input
         testgeval = int(input("Voer een testgeval in: "))
@@ -20,13 +26,14 @@ def main():
         n = findNum(testgeval)
         # Zet antwoord in array
         testgevallen.append(n)
-
         i = i + 1
 
+def printAntwoorden(aantalGetallen, testgevallen):
     # Print antwoorden
-    while j < aantalGetallen:
-        print(testgevallen[j])
-        j = j + 1
+    i = 0
+    while i < aantalGetallen:
+        print(testgevallen[i])
+        i = i + 1
 
 
 def findNum(testgeval):

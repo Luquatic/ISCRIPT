@@ -3,18 +3,20 @@ Opdracht 10 - Palindroomzinnen
 https://dodona.ugent.be/nl/exercises/23570674/
 """
 
-def main():
-    # Variables
-    i = 0
-    j = 0
-    k = 0
-    zinArray = []
-    reversedArray = []
+zinArray = []
+reversedArray = []
 
+def main():
     # User input
     aantalZinnen = float(input("Hoeveel zinnen wil je gebruiken: "))
 
-    # Create array
+    # Uitvoeren
+    getZinArray(aantalZinnen)
+    getReversedArray(zinArray)
+    checkPalindroom(zinArray, reversedArray)
+
+def getZinArray(aantalZinnen) -> zinArray:
+    i = 0
     while i < aantalZinnen:
         # User input
         zin = input("zin: ")
@@ -27,20 +29,22 @@ def main():
         zinArray.append(zin)
         i = i + 1
 
-    # Draai elke zin om
-    while j < len(zinArray):
-        reversedZin = zinArray[j][::-1]
+def getReversedArray(zinArray) -> reversedArray:
+    i = 0
+    while i < len(zinArray):
+        reversedZin = zinArray[i][::-1]
+        # Draai elke zin om
         reversedArray.append(reversedZin)
-        j = j + 1
+        i = i + 1
 
-    # Check palindroom
-    while k < len(zinArray):
-        if zinArray[k] == reversedArray[k]:
+def checkPalindroom(zinArray, reversedArray):
+    i = 0
+    while i < len(zinArray):
+        if zinArray[i] == reversedArray[i]:
             print("Paldindroomzin")
-            k = k + 1
         else:
             print("Geen palindroomzin")
-            k = k + 1
+        i = i + 1
 
 
 if __name__ == "__main__":
