@@ -5,14 +5,14 @@ https://dodona.ugent.be/nl/exercises/417422714/
 
 # Variables
 wachtwoordArray = []
-i = 0
 
 def main():
     # User input
     aantalWachtwoorden = float(input("Hoeveel zinnen wil je gebruiken: "))
 
     # Create array
-def getAantalWachtwoordenArray(aantalWachtwoorden, i) -> wachtwoordArray:
+def getAantalWachtwoordenArray(aantalWachtwoorden) -> wachtwoordArray:
+    i = 0
     if aantalWachtwoorden >= 1 and aantalWachtwoorden <= 100:
         while i < aantalWachtwoorden:
             # User input
