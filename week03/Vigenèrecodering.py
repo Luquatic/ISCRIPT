@@ -4,52 +4,50 @@ https://dodona.ugent.be/nl/exercises/862295437/
 """
 
 import string
+tekstVersleuteld = []
 
 def main():
     # Codeer 1
     codeer('NOBODY EXPECTS THE SPANISH INQUISITION!', 'CIRCUS')
 
-    # Decodeer 1
-    decodeer('PWSQXQ MORYUVA VBW AGCHAUP KHIWQJKNAQV!', 'CIRCUS')
-
-    # Codeer 2
-    codeer('OH SHUT UP! AND GO AND CHANGE YOUR ARMOUR!', 'ARTHUR')
-
-    # Decodeer 2
-    decodeer('OY ZBLT NW! AEW AF RGK THRGNY YFNY RRDHBL!', 'ARTHUR')
+    # # Decodeer 1
+    # decodeer('PWSQXQ MORYUVA VBW AGCHAUP KHIWQJKNAQV!', 'CIRCUS')
+    #
+    # # Codeer 2
+    # codeer('OH SHUT UP! AND GO AND CHANGE YOUR ARMOUR!', 'ARTHUR')
+    #
+    # # Decodeer 2
+    # decodeer('OY ZBLT NW! AEW AF RGK THRGNY YFNY RRDHBL!', 'ARTHUR')
 
 
 def codeer(tekst: str, sleutelwoord: str) -> None:
     # Verkrijg lengte van tekst
-    tekstLengte, tekst = getLengteTekst(tekst)
+    tekstLengte, newTekst = getLengteTekst(tekst)
     # Verkrijg lengte van sleutelwoord
     sleutelwoordLengte = getLengteSleutelwoord(sleutelwoord)
-    print(tekstLengte)
-    print(sleutelwoordLengte)
-
+    # Kijkt hoevaak het sleutelwoord in de tekst kan en slaat de overige letters op
     aantalkeer_passend, overige_letters = divmod(tekstLengte, sleutelwoordLengte)
-    print(aantalkeer_passend, overige_letters)
-
     # Verkrijg sleutelzin met de lengte van tekst
     sleutelZin = getSleutelzin(sleutelwoord, aantalkeer_passend, overige_letters)
-    print(sleutelZin)
 
     i = 0
     while i < tekstLengte:
         # Verkrijg letter van string
-        letterCode = tekst[:i]
+        letterTekst = newTekst[i]
         # Transform eerste letter naar cijfer
-        Oi = string.ascii_uppercase.index(letterCode)
-        print(Oi)
+        Oi = string.ascii_uppercase.index(letterTekst)
 
-        # # Verkrijg eerste letter van string
-        # letterSleutel = sleutelZin[:i]
-        # # Transform eerste letter naar cijfer
-        # Si = string.ascii_uppercase.index(letterSleutel)
-        #
-        # Vi = Oi + Si % 26
-        # print(string.ascii_uppercase[Vi])
+        # Verkrijg eerste letter van string
+        letterSleutel = sleutelZin[i]
+        # Transform eerste letter naar cijfer
+        Si = string.ascii_uppercase.index(letterSleutel)
+
+        Vi = Oi + Si % 26
+        print(string.ascii_uppercase[Vi])
+        # tekstVersleuteld.append(string.ascii_uppercase[Vi])
         i = i + 1
+
+    # print(tekstVersleuteld)
 
 # def decodeer(tekst: str, sleutelwoord: str) -> None:
 #     print("decodeer")
