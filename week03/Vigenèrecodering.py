@@ -6,10 +6,8 @@ https://dodona.ugent.be/nl/exercises/862295437/
 import string
 
 def codeer(tekst: str, sleutelwoord: str) -> None:
-    # Verkrijg lengte van tekst
     tekstLengte = getLengteTekst(tekst)
-    # Verkrijg lengte van sleutelwoord
-    sleutelwoordLengte = getLengteSleutelwoord(sleutelwoord)
+    sleutelwoordLengte = len(sleutelwoord)
     # Kijkt hoevaak het sleutelwoord in de tekst kan en slaat de overige letters op
     aantalkeer_passend, overige_letters = divmod(tekstLengte, sleutelwoordLengte)
     # Verkrijg sleutelzin met de lengte van tekst
@@ -19,10 +17,8 @@ def codeer(tekst: str, sleutelwoord: str) -> None:
     print(''.join(tekstVersleuteld))
 
 def decodeer(tekst: str, sleutelwoord: str) -> None:
-    # Verkrijg lengte van tekst
     tekstLengte = getLengteTekst(tekst)
-    # Verkrijg lengte van sleutelwoord
-    sleutelwoordLengte = getLengteSleutelwoord(sleutelwoord)
+    sleutelwoordLengte = len(sleutelwoord)
     # Kijkt hoevaak het sleutelwoord in de tekst kan en slaat de overige letters op
     aantalkeer_passend, overige_letters = divmod(tekstLengte, sleutelwoordLengte)
     # Verkrijg sleutelzin met de lengte van tekst
@@ -80,10 +76,6 @@ def getTekstUnlocked(tekst, sleutelZin):
 
 def getLengteTekst(tekst):
     lengte = len(tekst)
-    return lengte
-
-def getLengteSleutelwoord(sleutelwoord):
-    lengte = len(sleutelwoord)
     return lengte
 
 def getSleutelzin(sleutelwoord, aantalkeer_passend, overige_letters):
