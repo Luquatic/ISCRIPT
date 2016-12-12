@@ -83,16 +83,16 @@ def getSleutelzin(sleutelwoord, aantalkeer_passend, overige_letters):
     return zin
 
 def main():
-    # Codeer 1
+    # Codeer1
     codeer('NOBODY EXPECTS THE SPANISH INQUISITION!', 'CIRCUS')
 
-    # Decodeer 1
+    # Decodeer1
     decodeer('PWSQXQ MORYUVA VBW AGCHAUP KHIWQJKNAQV!', 'CIRCUS')
 
-    # Codeer 2
+    # Codeer2
     codeer('OH SHUT UP! AND GO AND CHANGE YOUR ARMOUR!', 'ARTHUR')
 
-    # Decodeer 2
+    # Decodeer2
     decodeer('OY ZBLT NW! AEW AF RGK THRGNY YFNY RRDHBL!', 'ARTHUR')
 
 if __name__ == "__main__":
